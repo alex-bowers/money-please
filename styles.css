@@ -1,0 +1,99 @@
+:root {
+    --color-one: #d7d2cb;
+    --color-two: #b1aaa0;
+    --color-three: #8d7b6d;
+    --color-four: #5a4f44;
+    --color-five: #3b2d2b;
+}
+
+body {
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: var(--color-five);
+    color: var(--color-one);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    align-items: center;
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
+}
+
+#annualPaymentsThisMonth,
+#annualPaymentsNextMonth {
+    display: none;
+    background-color: var(--color-two);
+    color: var(--color-five);
+    & h2 {
+        margin-top: 0;
+    }
+}
+
+#annualPaymentsThisMonth,
+#annualPaymentsNextMonth,
+.headlines {
+    height: 100%;
+}
+
+#annualPaymentsThisMonth.show-payments,
+#annualPaymentsNextMonth.show-payments,
+.headlines {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header h1 {
+    font-size: 10rem;
+}
+
+.headlines {
+    background-color: var(--color-one);
+    color: var(--color-five);
+    & div:last-child {
+        font-size: 4rem;
+        font-weight: 900;
+        padding-top: 4rem;
+    }
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (min-device-width: 640px) {
+    body {
+        font-size: 1.5rem;
+    }
+    .headlines {
+        & div:last-child {
+            padding-top: 2rem;
+        }
+    }
+}
+
+@media screen and (min-device-width: 640px) and (max-device-width: 1024px) {
+    .header h1 {
+        font-size: 7rem;
+    }
+    .headlines {
+        & div:last-child {
+            font-size: 2rem;
+        }
+    }
+}
+
+@media screen and (min-device-width: 1024px) {
+    body {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+    .header { grid-area: 1 / 1 / 2 / 3; }
+    .headlines { grid-area: 2 / 1 / 3 / 3; }
+    .payments-this-month { grid-area: 3 / 1 / 4 / 2; }
+    .payments-next-month { grid-area: 3 / 2 / 4 / 3; }
+}

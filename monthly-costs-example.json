@@ -1,0 +1,19 @@
+{
+    "budget": "",
+    "set": [
+        {
+            "name": "",
+            "payments": [
+                { "name": "", "value": 0, "paymentMonth": 2  }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "name": "",
+            "payments": [
+                { "name": "", "value": 0, "paymentMonth": null  }
+            ]
+        }
+    ]
+}
