@@ -2,7 +2,7 @@
 
 I don't like spreadsheets but I need to track my essential spending.
 
-`monthly-costs.json` tracks both my monthly and annual payments.
+I'm using Cloudflare workers to tracks both my monthly and annual payments. This is set by some default content in `monthly-costs.json`.
 
 I want to ensure that I can afford the large annual payments, whenever they arrive.
 
