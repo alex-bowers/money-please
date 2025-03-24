@@ -5,6 +5,7 @@
     <body>
         <header class="header">
             <h1>Money Please</h1>
+            <button id="openEditCostsAction">Edit Costs</button>
         </header>
         <section
             id="costHeadlines"
@@ -31,6 +32,16 @@
             class="payments-next-month"
         >
             <h2>Annual Payments Next Month</h2>
+        </div>
+        <div class="editable-costs">
+            <pre
+                id="editableCostsContent"
+                contenteditable="true"
+            ></pre>
+            <div class="editable-costs--action-wrapper">
+                <button id="cancelAction">Cancel</button>
+                <button id="updateCostsAction">Update Costs</button>
+            </div>
         </div>
     </body>
     <footer>

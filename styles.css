@@ -16,9 +16,13 @@ body {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     align-items: center;
-    font-size: 2rem;
     margin: 0;
     text-align: center;
+}
+
+body,
+button {
+    font-size: 2rem;
 }
 
 #annualPaymentsThisMonth,
@@ -39,7 +43,8 @@ body {
 
 #annualPaymentsThisMonth.show-payments,
 #annualPaymentsNextMonth.show-payments,
-.headlines {
+.headlines,
+.show-editable-costs {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,6 +52,16 @@ body {
 
 .header h1 {
     font-size: 10rem;
+}
+
+#openEditCostsAction {
+    background-color: transparent;
+    border: 0;
+    color: var(--color-one);
+    cursor: pointer;
+    margin: 1rem;
+    padding: 0;
+    text-decoration: underline;
 }
 
 .headlines {
@@ -59,6 +74,50 @@ body {
     }
 }
 
+.editable-costs {
+    display: none;
+    &.show-editable-costs {
+        display: flex;
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        top: 1rem;
+        background-color: var(--color-one);
+        border: 1px solid var(--color-three);
+    }
+    #cancelAction,
+    #editableCostsContent,
+    #updateCostsAction,
+    .editable-costs--action-wrapper {
+        padding: 2rem;
+    }
+    & #editableCostsContent {
+        background-color: var(--color-five);
+        height: 100%;
+        margin: 0;
+        overflow-y: scroll;
+        text-align: left;
+        white-space: pre-wrap;
+    }
+    & .editable-costs--action-wrapper {
+        & #updateCostsAction,
+        & #cancelAction {
+            cursor: pointer;
+            border: none;
+            border-radius: 0.5rem;
+        }
+        & #updateCostsAction {
+            background-color: var(--color-four);
+            color: var(--color-one);
+        }
+        & #cancelAction {
+            background-color: var(--color-two);
+            margin-right: 1rem;
+        }
+    }
+}
+
 ul {
     list-style: none;
     margin: 0;
@@ -66,8 +125,17 @@ ul {
 }
 
 @media screen and (min-device-width: 640px) {
-    body {
+    body,
+    button {
         font-size: 1.5rem;
+    }
+    .editable-costs {
+        #cancelAction,
+        #editableCostsContent,
+        #updateCostsAction,
+        .editable-costs--action-wrapper {
+            padding: 1rem;
+        }
     }
     .headlines {
         & div:last-child {
