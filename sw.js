@@ -1,5 +1,5 @@
 // Bump the version whenever the cached file list changes.
-const CACHE_NAME = "money-please-v1"
+const CACHE_NAME = "money-please-v2"
 
 const APP_SHELL = [
     "./",
