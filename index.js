@@ -8,6 +8,11 @@ const WORKER_UPDATE_URL = "https://api.alexbowers.co.uk/monthly-costs/update"
 
 const editableCostsWrapper = document.getElementsByClassName("editable-costs")[0]
 
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js")
+        .catch((err) => console.error("Service worker registration failed:", err))
+}
+
 // Average per month.
 // Some items happen once a year, so the cost is divided by 12.
 // Variables are based on average from the past 4 months.
@@ -116,11 +121,11 @@ function setInitialCosts() {
 }
 
 function showAnnualPayments() {
-    if (annualPaymentsThisMonth.length > 1) {
+    if (annualPaymentsThisMonth.length > 0) {
         addPaymentsToPage(annualPaymentsThisMonth, "annualPaymentsThisMonth")
     }
 
-    if (annualPaymentsNextMonth.length > 1) {
+    if (annualPaymentsNextMonth.length > 0) {
         addPaymentsToPage(annualPaymentsNextMonth, "annualPaymentsNextMonth")
     }
 }
