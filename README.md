@@ -6,8 +6,6 @@ I'm using Cloudflare workers to tracks both my monthly and annual payments. This
 
 I want to ensure that I can afford the large annual payments, whenever they arrive.
 
-[![Image from Gyazo](https://i.gyazo.com/4fe6a7bbfa6c2c00d024ee8529618865.png)](https://gyazo.com/4fe6a7bbfa6c2c00d024ee8529618865)
-
 ## Installing on Android
 
 Money Please is a Progressive Web App (PWA). It must be served over HTTPS (or from `localhost`) to be installable.
