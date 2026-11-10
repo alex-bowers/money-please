@@ -1,0 +1,11 @@
+services:
+  money-please:
+    build: .
+    container_name: money-please
+    restart: unless-stopped
+    user: "1000:1000"
+    ports:
+      - "127.0.0.1:18095:80"
+    volumes:
+      # Your costs live in ./data/monthly-costs.json on the host.
+      - ./data:/data

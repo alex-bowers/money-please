@@ -3,8 +3,8 @@ let budget,
     annualPaymentsThisMonth,
     annualPaymentsNextMonth
 
-const WORKER_GET_URL = "https://api.alexbowers.co.uk/monthly-costs/get"
-const WORKER_UPDATE_URL = "https://api.alexbowers.co.uk/monthly-costs/update"
+const WORKER_GET_URL = "/api/monthly-costs/get"
+const WORKER_UPDATE_URL = "/api/monthly-costs/update"
 
 const editableCostsWrapper = document.getElementsByClassName("editable-costs")[0]
 

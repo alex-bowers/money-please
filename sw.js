@@ -1,5 +1,5 @@
 // Bump the version whenever the cached file list changes.
-const CACHE_NAME = "money-please-v2"
+const CACHE_NAME = "money-please-v3"
 
 const APP_SHELL = [
     "./",
@@ -33,10 +33,11 @@ self.addEventListener("activate", (event) => {
 })
 
 // Network first for the app's own files, falling back to the cache when offline.
-// Cross-origin requests (the Cloudflare worker API) are left alone so costs are never stale.
+// Cross-origin requests and the /api/ costs endpoints are left alone so costs are never stale.
 self.addEventListener("fetch", (event) => {
     const request = event.request
-    if (request.method !== "GET" || new URL(request.url).origin !== self.location.origin) {
+    const url = new URL(request.url)
+    if (request.method !== "GET" || url.origin !== self.location.origin || url.pathname.startsWith("/api/")) {
         return
     }
 
